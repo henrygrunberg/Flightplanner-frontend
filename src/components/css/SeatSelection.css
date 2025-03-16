@@ -1,0 +1,379 @@
+/* Page Background */
+.page-container {
+    background-color: #f5f5f5; /* Light gray */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    z-index: 0;
+}
+
+/* White Content Wrapper */
+.seat-selection-wrapper {
+    position: relative;
+    background: white;
+    width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /*overflow: hidden;*/
+    z-index: 3;
+}
+
+/* Header */
+.seat-selection-header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 15px 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Flight Info */
+.flight-info {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Seat Selection Container */
+.seat-selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 20px;
+}
+
+/* Passenger List */
+.passenger-list {
+    width: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 20px;
+    background: white;
+    border-radius: 3px;
+    padding: 15px;
+    border: 1px solid lightgray;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+/* Message for No Passenger */
+.no-passenger-message {
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+}
+
+/* Passenger Entry */
+.passenger {
+    padding: 6px;
+    font-size: 16px;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    line-height: 1.2;
+
+}
+
+.passenger p {
+    margin: 6px 0;
+
+}
+
+.passenger:hover {
+    background: #f9f7f7;
+}
+
+.passenger.active {
+    border: 2px solid #ecaa5e;
+}
+
+/* Container to ensure overlays are positioned correctly */
+.seat-map-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Seat Map */
+.seat-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 150px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    position: relative;
+    margin-left: 80px;
+    padding: 100px 20px;
+    z-index: 2;
+}
+
+/* Overlays to hide top and bottom parts of the border */
+.seat-map-overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    z-index: 3;
+}
+
+.seat-map-overlay.top {
+    top: 0;
+}
+
+.seat-map-overlay.bottom {
+    bottom: 0;
+}
+
+
+/* Left Wing */
+.left-wing {
+    position: absolute;
+    width: 850px;
+    height: 900px;
+    background: rgba(200, 200, 200, 0.2);
+    clip-path: polygon(100% 13%, 100% 86%, 0 100%, 0% 50%);
+    top: 35%;
+    left: 0px;
+    z-index: 1;
+}
+
+.right-wing {
+    position: absolute;
+    width: 200px;
+    height: 625px;
+    background: rgba(200, 200, 200, 0.2);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 96%);
+    top: 42.6%;
+    right: 0px;
+    z-index: 1;
+}
+
+/* Seat Row */
+.seat-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+/* Extra legroom spacing */
+.extra-legroom {
+    margin-top: 25px;
+}
+
+/* Seats */
+.seat {
+    width: 40px;
+    height: 40px;
+    background: gray;
+    border-radius: 5px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.1s;
+    margin: 5px;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+/* Taken Seats */
+.seat.taken {
+    background: lightgray;
+    color: white;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.seat.taken::after {
+    content: "X";
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Recommended Seat */
+.seat.selected {
+    background: #ecaa5e;
+}
+
+.seat-column {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+/* Specific rules for different seat layouts */
+.seat-column.column-1 {
+    flex: 1.5; /* Single-seat columns take full space */
+    justify-content: center;
+}
+
+.seat-column.column-2 {
+    flex: 1.5;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.seat-column.column-3 {
+    flex: 1.5; /* Three-seat columns take up more space */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Styling for aisle row numbers */
+.aisle-row-number {
+    width: 40px;  /* Ensure fixed width */
+    height: 40px; /* Match seat height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0; /* Remove extra margin */
+}
+
+/* Seat Tooltip */
+.seat-tooltip {
+    display: none;
+    position: absolute;
+    width: 170px;
+    height: 65px;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.seat-tooltip-title {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.seat:hover .seat-tooltip {
+    display: block;
+}
+
+/* Booking Actions */
+.booking-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 10px 30px;
+    background: white;
+}
+
+/* Buttons */
+.cancel-button {
+    width: 160px;
+    height: 45px;
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+}
+
+.finalize-button {
+    width: 160px;
+    height: 45px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ecaa5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+  }
+  
+.IconContainer {
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: 0.5s;
+}
+
+.finalize-button .text {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    transition-duration: 0.5s;
+    font-size: 1.04em;
+    font-weight: 600;
+}
+
+/* Hover Effects */
+.finalize-button:hover .IconContainer {
+    transform: translateX(58px);
+    border-radius: 40px;
+    transition-duration: 0.5s;
+}
+
+.finalize-button:hover .text {
+    transform: translate(10px, 0px);
+    transition-duration: 0.5s;
+    color: white;
+}
+
+/* Click Animation */
+.finalize-button:active {
+    transform: scale(0.95);
+    transition-duration: 0.5s;
+}

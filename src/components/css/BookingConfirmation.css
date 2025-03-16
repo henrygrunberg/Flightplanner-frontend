@@ -1,0 +1,125 @@
+/* Page Background */
+.page-container {
+    background-color: #f5f5f5; /* Light gray */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    z-index: 0;
+}
+
+/* White Box Container */
+.confirmation-wrapper {
+    position: relative;
+    background: white;
+    width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.confirmation-header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Subtext */
+.confirmation-subtext {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Flight and Passenger Container */
+.flight-passenger-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation-flight-info {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: #666;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Passenger List */
+.confirmed-passenger-list {
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    flex-grow: 1;
+}
+
+/* Passenger Card */
+.confirmed-passenger-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Passenger Card Heading */
+.confirmed-passenger-card h3 {
+    padding-left: 10px;
+    padding-bottom: 10px ;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Passenger Card Text */
+.confirmed-passenger-card p {
+    padding-left: 10px;
+    line-height: 1.5;
+    margin: 3px 0;
+}
+
+.confirmation-flight-date {
+    font-size: 18px;
+    margin: 20px;
+}
+
+.confirmation-flight-info strong {
+    font-size: 22px;
+    color: #454343;
+}
+
+
+.confirmed-back-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 2px solid lightgray;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.thanks {
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
