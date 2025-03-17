@@ -1,12 +1,37 @@
-# React + Vite
+# Flightplanner Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This document covers only how to run the front-end part of this project.
+The main documentation is in the backend repository's README.md, where you can find more details about the full project setup.
+You can find the backend repository here:
 
-Currently, two official plugins are available:
+[Backend repository](https://github.com/henrygrunberg/Flightplanner)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Setup Instructions**
 
-## Expanding the ESLint configuration
+### **Frontend (React + Node.js 19+)**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### **Prerequisites**
+- Install **Node.js 19+**
+- Install **npm** (comes with Node.js)
+
+#### **Steps to Set Up Frontend**
+
+1. Clone the frontend repository:
+   ```
+   git clone https://github.com/henrygrunberg/Flightplanner-frontend.git
+   cd Flightplanner-frontend
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Run the frontend development server:
+   ```
+   npm run dev
+   ```
+
+   The frontend will be available at: `http://localhost:5173`
+
+---
